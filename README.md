@@ -4,37 +4,6 @@ A collection of ImageJ/Fiji macros for image processing, registration, and file 
 
 ## Macros
 
-### XRF-RGB Image Registration
-
-This macro is designed to register a set of MA-XRF (macro X-ray fluorescence spectroscopy) images to a visible (RGB) image.
-
-The registration is based on selecting corresponding points in both the RGB and XRF images using the **Landmark Correspondences** plugin. The macro then applies an **Affine transformation** to align the XRF images with the RGB image.
-
-#### Requirements
-
-- [ImageJ](https://imagej.nih.gov/ij/) or Fiji
-- [Landmark Correspondences](https://imagej.net/plugins/landmark-correspondences) plugin
-
-#### Usage
-
-1. **Open RGB image**
-   - Run the macro and choose the RGB image when prompted.
-
-2. **Select XRF image**
-   - Choose an XRF image containing visible features that can be matched to the RGB image.
-
-3. **Select corresponding points**
-   - Select at least 10 points on the RGB image using the multi-point selection tool.
-   - Select the corresponding points on the XRF image in the same order.
-
-4. **Register XRF images**
-   - The macro uses Landmark Correspondences to apply an Affine transformation to the XRF images.
-
-5. **Output**
-   - Registered images are saved as TIFF files in a `Registered` subfolder within the original XRF image directory.
-
----
-
 ### Batch Image Processor
 
 This macro provides batch processing of common image formats, including TIFF, JPEG, and PNG files.
@@ -75,6 +44,38 @@ The macro can also optionally calculate the brightness of the processed images a
    - Processed images are saved in the selected output folder.
 
 > **Warning:** If the input and output folders are the same, the original files may be overwritten unless the output format is changed.
+
+---
+
+### XRF-RGB Image Registration
+
+This macro is designed to register a set of MA-XRF (macro X-ray fluorescence spectroscopy) images to a visible (RGB) image.
+
+The registration is based on selecting corresponding points in both the RGB and XRF images using the **Landmark Correspondences** plugin. The macro then applies an **Affine transformation** to align the XRF images with the RGB image.
+
+#### Requirements
+
+- [ImageJ](https://imagej.nih.gov/ij/) or Fiji
+- [Landmark Correspondences](https://imagej.net/plugins/landmark-correspondences) plugin
+
+#### Usage
+
+1. **Open RGB image**
+   - Run the macro and choose the RGB image when prompted.
+
+2. **Select XRF image**
+   - Choose an XRF image containing visible features that can be matched to the RGB image.
+
+3. **Select corresponding points**
+   - Select at least 10 points on the RGB image using the multi-point selection tool.
+   - Select the corresponding points on the XRF image in the same order.
+
+4. **Register XRF images**
+   - The macro uses Landmark Correspondences to apply an Affine transformation to the XRF images.
+
+5. **Output**
+   - Registered images are saved as TIFF files in a `Registered` subfolder within the original XRF image directory.
+
 
 ## Requirements
 
