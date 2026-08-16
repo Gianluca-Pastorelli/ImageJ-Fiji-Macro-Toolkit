@@ -6,7 +6,7 @@ macro "Register XRF and RGB Images" {
   RGB_Image = getTitle();
 
 // Open the XRF image
-  openPath = File.openDialog("Choose a target XRF image with visible features");
+  openPath = File.openDialog("Choose a target XRF image (or image sequence) with visible features");
   open(openPath);
   XRF_Image = getTitle();
   
@@ -41,8 +41,8 @@ macro "Register XRF and RGB Images" {
     run("Landmark Correspondences", "source_image=XRF_Image template_image=RGB_Image transformation_method=[Least Squares] alpha=1 mesh_resolution=32 transformation_class=Affine");
   
   	// Save the transformed image in the "Registered" folder
-  	title = getTitle();
-  	saveAs("tiff", NewFolder+title);
+  	originalTitle = files[i];
+  	saveAs("tiff", NewFolder+originalTitle);
   }
   
 // Close all opened images and the ROI manager
